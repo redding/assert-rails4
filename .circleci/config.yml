@@ -13,7 +13,7 @@ jobs:
       - checkout
       - restore_cache:
           keys:
-          - ruby-2.3.7-dependencies
+          - ruby-2.3.7-dependencies1
       - run:
           name: install dependencies
           command: |
@@ -21,7 +21,7 @@ jobs:
       - save_cache:
           paths:
             - ./vendor/bundle
-          key: ruby-2.3.7-dependencies
+          key: ruby-2.3.7-dependencies1
       - run:
           name: run Assert test suite
           command: |
@@ -36,7 +36,7 @@ jobs:
       - checkout
       - restore_cache:
           keys:
-          - ruby-2.4.5-dependencies
+          - ruby-2.4.5-dependencies1
       - run:
           name: install dependencies
           command: |
@@ -44,7 +44,7 @@ jobs:
       - save_cache:
           paths:
             - ./vendor/bundle
-          key: ruby-2.4.5-dependencies
+          key: ruby-2.4.5-dependencies1
       - run:
           name: run Assert test suite
           command: |
@@ -59,7 +59,7 @@ jobs:
       - checkout
       - restore_cache:
           keys:
-          - ruby-2.5.3-dependencies
+          - ruby-2.5.3-dependencies1
       - run:
           name: install dependencies
           command: |
@@ -67,7 +67,7 @@ jobs:
       - save_cache:
           paths:
             - ./vendor/bundle
-          key: ruby-2.5.3-dependencies
+          key: ruby-2.5.3-dependencies1
       - run:
           name: run Assert test suite
           command: |

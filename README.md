@@ -1,6 +1,6 @@
 # AssertRails4
 
-TODO: Write a gem description
+AssertRails adapter for Rails 4.  See https://github.com/redding/assert-rails for reference.
 
 ## Usage
 

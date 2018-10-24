@@ -4,7 +4,16 @@ AssertRails adapter for Rails 4.  See https://github.com/redding/assert-rails fo
 
 ## Usage
 
-TODO: Write code samples and usage instructions here
+### Reset the test db for test runs
+
+```ruby
+# in test/helper.rb
+ENV['RAILS_ENV'] ||= 'test'
+require File.expand_path('../../config/environment', __FILE__)
+
+require "assert-rails4"
+AssertRails.reset_db
+```
 
 ## Installation
 

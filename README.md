@@ -15,6 +15,31 @@ require "assert-rails4"
 AssertRails.reset_db
 ```
 
+### Running database tests in a transaction
+
+```ruby
+# in test/helper.rb
+require "assert-rails4"
+class DbTests < AssertRails::DbTests
+  # put any extra setup / teardown logic here
+end
+```
+
+Then in a test that needs to interact with the database:
+
+```ruby
+require "assert"
+require "blog_record"
+
+class BlogRecord
+
+  class SystemTests < DbTests
+    # all tests in this context will be run in a transaction
+  end
+
+end
+```
+
 ## Installation
 
 Add this line to your application's Gemfile:

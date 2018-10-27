@@ -27,6 +27,7 @@ class AssertRails4::Adapter
     subject{ @adapter }
 
     should have_imeths :reset_db
+    should have_imeths :transaction, :rollback!
 
     should "know how to reset the db" do
       maintain_test_schema_called_with = nil
@@ -38,6 +39,24 @@ class AssertRails4::Adapter
 
       exp = []
       assert_equal exp, maintain_test_schema_called_with
+    end
+
+    should "know how to run a transaction block" do
+      ar_transaction_called = false
+      Assert.stub(ActiveRecord::Base, :transaction) do |&block|
+        ar_transaction_called = true
+        block.call
+      end
+
+      block_yielded_to = false
+      subject.transaction{ block_yielded_to = true }
+
+      assert_true ar_transaction_called
+      assert_true block_yielded_to
+    end
+
+    should "know how to trigger a transaction rollback" do
+      assert_raises(ActiveRecord::Rollback){ subject.rollback! }
     end
 
   end

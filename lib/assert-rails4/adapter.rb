@@ -11,6 +11,14 @@ module AssertRails4
       ActiveRecord::Migration.maintain_test_schema!
     end
 
+    def transaction(&block)
+      ActiveRecord::Base.transaction(&block)
+    end
+
+    def rollback!
+      raise ActiveRecord::Rollback
+    end
+
   end
 
 end

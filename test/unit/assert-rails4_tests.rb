@@ -12,7 +12,7 @@ module AssertRails4
     end
     subject{ @module }
 
-    should "set AssetRails's adapter" do
+    should "set AssertRails's adapter" do
       exp = AssertRails4::Adapter
       assert_instance_of exp, AssertRails.adapter
     end

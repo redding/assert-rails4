@@ -1,3 +1,5 @@
+=== **This has been archived and is not maintained.** ===
+
 # AssertRails4
 
 AssertRails adapter for Rails 4.  See https://github.com/redding/assert-rails for reference.
